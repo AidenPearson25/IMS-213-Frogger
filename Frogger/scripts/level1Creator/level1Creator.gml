@@ -14,7 +14,7 @@ function level1Creator()
 	{
 		for (var j = 1; j < 3; j++) //Making the starting grasspatch
 		{
-			grasspatch1[counter] = instance_create_layer((i * 32), (576 - (32 * j)), "floor", obj_grass);
+			grasspatch1[counter] = instance_create_layer((i * 32) + 16, (576 - (32 * j)) + 16, "floor", obj_grass);
 			counter += 1;
 		}
 		
@@ -22,7 +22,7 @@ function level1Creator()
 		
 		for (var j = 1; j < 7; j++) //Making the road
 		{
-			road[counter] = instance_create_layer((i * 32), (512 - (32 * j)), "floor", obj_road);
+			road[counter] = instance_create_layer((i * 32) + 16, (512 - (32 * j)) + 16, "floor", obj_road);
 			counter += 1;
 		}
 		
@@ -30,7 +30,7 @@ function level1Creator()
 		
 		for (var j = 1; j < 2; j++) //Making the break area
 		{
-			grasspatch2[counter] = instance_create_layer((i * 32), (320 - (32 * j)), "floor", obj_grass);
+			grasspatch2[counter] = instance_create_layer((i * 32) + 16, (320 - (32 * j)) + 16, "floor", obj_grass);
 			counter += 1;
 		}
 		
@@ -38,7 +38,7 @@ function level1Creator()
 		
 		for (var j = 1; j < 7; j++) //Making the water
 		{
-			water[counter] = instance_create_layer((i * 32), (288 - (32 * j)), "floor", obj_water);
+			water[counter] = instance_create_layer((i * 32) + 16, (288 - (32 * j)) + 16, "floor", obj_water);
 			counter += 1;
 		}
 		
@@ -46,14 +46,22 @@ function level1Creator()
 		
 		for (var j = 1; j < 2; j++)
 		{
-			landing[counter] = instance_create_layer((i * 32), (96 - (32 * j)), "floor", obj_grass);
+			landing[counter] = instance_create_layer((i * 32) + 16, (96 - (32 * j)) + 16, "floor", obj_grass);
 			counter += 1;
 		}
 	}
 
-	var spawner = instance_create_layer(0, 256, "objects", obj_lilypadSpawner);
+	var spawner = instance_create_layer(0, 256 + 16, "objects", obj_lilypadSpawner);
+	spawner.startPos = -32;
 	spawner.lilySpeed = 1;
 	spawner.groupSize = 3;
+	spawner.groupDistance = 120;
+	
+	var spawner = instance_create_layer(0, 224 + 16, "objects", obj_lilypadSpawner);
+	spawner.startPos = 608;
+	spawner.lilySpeed = -1;
+	spawner.groupSize = 2;
+	spawner.groupDistance = 120;
 	
 	level1Array = [grasspatch1, road, grasspatch2, water, landing]
 	return(level1Array);
