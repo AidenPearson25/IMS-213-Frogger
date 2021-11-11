@@ -50,6 +50,10 @@ function level1Creator()
 			counter += 1;
 		}
 	}
+
+	var spawner = instance_create_layer(0, 256, "objects", obj_lilypadSpawner);
+	spawner.lilySpeed = 1;
+	spawner.groupSize = 3;
 	
 	level1Array = [grasspatch1, road, grasspatch2, water, landing]
 	return(level1Array);

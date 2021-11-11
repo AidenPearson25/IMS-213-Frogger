@@ -1,27 +1,43 @@
 /// @description Insert description here
-if moving = true {
-if targetx > x
-{ x+=2;
+if (moving = true)
+{
+	if (targetx > x)
+	{
+		x+=2;
+	}
+	
+	if (targetx < x)
+	{
+		x-=2;
+	}
+	
+	if (targety > y)
+	{
+		y+=2	
+	}
+	
+	if (targety < y)
+	{
+		y-=2	
+	}
+	
+	if (targetx = x && targety = y)
+	{
+		moving = false;	
+	}
 }
-if targetx < x
-{ x-=2;
+
+if (place_meeting(x,y,obj_lilypad) && moving = false)
+{
+	x-=1	
 }
-if targety > y {
-y+=2	
+
+if (place_meeting(x,y,obj_lilypad) && moving = false)
+{
+	x+=1	
 }
-if targety < y {
-y-=2	
+
+if !place_meeting(x,y,obj_lilypad) && !place_meeting(x,y,obj_lilypad) && place_meeting(x,y,obj_water) && moving = false
+{
+	Lose();
 }
-if targetx = x and targety = y {
-moving = false;	
-}
-}
-if place_meeting(x,y,obj_lilypadleft) and moving = false {
-x-=1	
-}
-if place_meeting(x,y,obj_lilypadright) and moving = false {
-x+=1	
-}
-//if !place_meeting(x,y,obj_lilypadright) and !place_meeting(x,y,obj_lilypadleft) and place_meeting(x,y,obj_water) and moving = false {
-//Lose();
-//}
