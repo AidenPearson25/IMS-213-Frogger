@@ -22,6 +22,6 @@ x-=1
 if place_meeting(x,y,obj_lilypadright) and moving = false {
 x+=1	
 }
-if !place_meeting(x,y,obj_lilypadright) and !place_meeting(x,y,obj_lilypadleft) and place_meeting(x,y,obj_water) and moving = false {
-Lose();
-}
+//if !place_meeting(x,y,obj_lilypadright) and !place_meeting(x,y,obj_lilypadleft) and place_meeting(x,y,obj_water) and moving = false {
+//Lose();
+//}
